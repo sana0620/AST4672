@@ -1,0 +1,55 @@
+"""
+Created on Mon Sep  8 10:19:32 2025
+
+@author: sana
+
+support function file
+
+"""
+
+import numpy as np
+import scipy as sp
+import matplotlib as mpl
+import matplotlib.pyplot as plt  
+import astropy.io.fits as fits
+
+#other functions from my module can also be imported as following
+#from my_module import my_func, other_func
+
+
+def square(x):
+    """
+    This function returns the square of the input, which can be a scalar or a numpy array
+    of any dimension and numerical type.
+
+    Parameters
+    ----------
+    x : int, float, or numpy.ndarray
+        A scalar or array to be squared.
+
+        Array_like means all those objects -- lists, nested lists, etc. --
+        that can be converted to an array.  We can also refer to
+        variables like `var1`.
+
+    Returns 
+    -------
+    int, float, or numpy.ndarray
+        The square of the input.
+    
+    
+    Raises
+    ------
+    ValueError
+        If the input is not a number or an array of numbers.
+
+
+    Examples
+    >>> square(3)
+    9
+    >>> square(np.array([1, 2, 3]))
+    array([1, 4, 9])
+    >>> square(np.array([[1.0, 2.0], [3.0, 4.0]]))
+    array([[ 1.,  4.],
+           [ 9., 16.]])
+    """
+    return np.square(x)
