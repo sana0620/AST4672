@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Sep 13 20:22:38 2025
+
+@author: sana
+Home work 4 for AST4762
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+mean = 55
+std_dev = 13
+N = 10000
+sample = np.random.normal(loc = mean, scale = std_dev, size = N)
+
+plt.figure(1)
+plt.hist(sample, bins = 100, color = 'pink' , edgecolor="black" ,density = True) #density divides the frequency by N
+plt.grid()
+plt.xlabel('value')
+plt.ylabel('number of appearance/frequency')
+plt.title('Histogram of Gaussian with N draws.png') 
+plt.savefig('Histogram of Gaussian N draws')
+
+bins = np.arange(0, 101, 1)
+bin_centers =  (bins[1:] + bins[:-1])/2
+print('the bin centers are at :',bin_centers)
+
+#using the probability density function of a gaussian from scipy stats
+#no need to multiply the pdf with N to align the curves on top of each other
+gaussian_values=norm.pdf(bin_centers, loc=mean, scale=std_dev)
+plt.figure(2)
+plt.hist(sample, bins = 100, color = 'pink' , edgecolor="black" ,density = True)
+plt.grid()
+plt.xlabel('value')
+plt.ylabel('number of appearance/frequency')
+plt.title('Histogram Gaussian distribution with overlapping PDF curve') 
+plt.plot(bin_centers, gaussian_values, color='red', linewidth=2, label='Gaussian Curve')
+plt.savefig("Histogram overlapping with PDF.png")
+
+#analytically solved for the FWHM and sigma relation and the pdf is saved in the homework folder
