@@ -1,0 +1,19 @@
+Review of some of the scientific literature on Exoplanet HD189733b
+
+a. Knutson et al. (2007) – A Map of the Day-Night Contrast of HD189733b:
+
+This paper presents a brightness and temperature analysis of the extrasolar planet HD189733b using the 8µm channel of the Infra-Red Array Camera (IRAC) on the Spitzer Space Telescope. HD189733b was monitored continuously over a period of 33.1 hours corresponding to half the orbital period of the planet. The minimum and maximum brightness temperatures of the planet were recorded as the dayside of the planet came into view, which are 973+-33K and 1212+-11K respectively. The temperature distribution map of the irradiated side indicates that the peak hemisphere-integrated brightness occurs 16+-6 degrees before opposition, corresponding to a hot spot shifted east of the substellar point. This indicates that the atmosphere is able to transport the energy incident upon the dayside to the night side.
+
+b. Charbonneau et al. (2008) – Broadband Infrared Emission Spectrum of HD189733b:
+
+Using Spitzer photometry across multiple infrared bands, this paper measured the planet-to-star flux ratio and found that HD189733b’s spectrum does not follow a simple blackbody plank curve. This data indicates that there are heat redistribution in the atmosphere of the planet. Based on the classification of the exoplanets, HD189733b should not show any temperature inversion. This supports the hypothesis that this planet might possess an internal energy source and hence like Jupiter, simply radiates more energy than it receives.
+
+c. Evans et al. (2013) – The Deep Blue Color of HD189733b:
+
+This paper presents a secondary eclipse observation of HD189733b across the wavelength 290-570nm using the Space Telescope Imaging Spectrograph on the Hubble Telescope. The geometric albedo of the planet in the wavelength range of 290-450nm is measured to be 0.40+-0.12 while in the wavelength range of 450-570nm, the albedo is less than 0.12. This increased brightness towards the shorter wavelengths infer that the planet appears Blue in the visible spectrum.  This can be interpreted as evidence for
+optically thick reflective clouds on the dayside hemisphere causing absorption by sodium.
+
+d. Zhang et al. (2024) – JWST/NIRCam Retrievals of HD189733b:
+
+This recent study used JWST/NIRCam spectra (2.4–5.0 μm) and the retrieval model PLATON 6 to deduce atmospheric composition from the data. H₂O, CO₂, CO, and H₂S were detected with metallicity around 0.5–0.7× solar and C/O ≈ 0.4. Methane composition appeared  to be depleted, likely due to photochemistry. This study represents that there is a tentative evidence for a dayside thermal inversion at millibar pressures. This paper highlights JWST’s transformative role in the characterization of exoplanet.
+
