@@ -1,0 +1,621 @@
+Sanarahamat A Kodakeri
+Log for AST4762 Data Analysis, Fall 2025
+Opened TextEdit, started this log, saved as:
+/Desktop/-ast4762-sana.log
+
+
+Wed Aug 20 15:13 EST 2025
+********IN
+first day of class 
+*****************************************
+
+Name:	Sanarahamat A Kodakeri
+Username:	sana
+
+What astronomy classes have you taken?	
+PPP and data analysis
+
+Are you generally comfortable with calculus and physics?	
+yes
+
+Have you ever programmed a computer?
+on a computer, yes
+
+In what language(s)?
+C,python,Matlab
+
+Have you taken a programming class, and if so which?	
+C programming, computational fluid dynamics, flight mechanics
+
+Have you taken statistics or probability?	
+no
+
+Will you be attending the DPS conference this year, or will you be away otherwise?	
+not sure,
+
+Why are you taking this course?	
+This a core course in requirement for my PhD and also I am going to learn how to do my research with the help of this course.
+
+Are there particular topics you hope to learn?
+Handling big data, working with big data, analyzing big data
+
+If you have programmed outside of a course before, please briefly describe:
+I have done a variety of programming for projects in aerospace engineering, Computational Optics, in general making programs for handling excel sheet data, plotting and interpreting graphs for research purposes.
+
+If you have worked with scientific data before, briefly describe your experience:
+I haven't exactly worked with astronomical data but scientific data from lab experiments in plasma physics and optics are familiar
+
+Please describe any projects in astronomy, including involvement in amateur groups,
+owning a telescope, research, etc.:
+I did a summer research program in Indian Center for Space Physics, Kolkata. I worked on creating a model to replicate the spectra of galaxy M101 and then interpreting its properties such as Luminosity,Hydrogen content, Helium content, free electrons etc from the model. I also participated in the data collection process from a 1.6 meter telescope at the facility.
+
+
+
+
+I have made a folder in Desktop by right clicking in the open desktop folder and clicking on the segment that says "New Folder"
+this opens a prompt where you enter the name of the folder. I entered hw0_sana as the name of the folder and clicked on create.
+this creates the new said folder.
+I right click on the log file present in my Desktop folder and click on the copy option. I then open my hw0_sana folder and paste the file there by right clicking and selectign paste option.
+I zip the folder by putting in command in the terminal and then upload it on webcourses
+
+********OUT
+*************************************
+
+**************************************
+Wed Aug 22 14:15 EST 2025
+********IN
+
+
+
+created a hw1_sana folder in the AST4762 course folder
+
+ran jupyter notebook from python in anaconda3
+
+took a screenshot of the tab by prt sc key and renamed it hw1_sana_problem2_jupyternotebook.png
+
+
+tried to log in to stokes by following the steps in the handouts
+
+not able to connect to stokes because not yet connected to ucf_WP2 wifi
+took screenshot of trying the steps of logging in
+
+tried to setup github desktop app on linux but it doesnt support the linux system. 
+took a screenshot of the webpage
+
+renaming all screenshots according to homework requirement and moving them hw1 folder
+
+compressed the folder, drag and upload it on the webcourse page.
+
+Aug 22 15:14 EST 2025
+********OUT
+****************************************
+
+******************************************
+Aug 25 14:28 EST 2025
+********IN
+
+learning to create environment and installing astropy
+
+class was all about python coding
+downloaded all the supporting files from week 2 folder off of webcourses
+ran few of the sections of the theodora's py book python_coding_style_F25-classroom
+
+
+Aug 25 16:18 EST 2025
+********OUT
+********************************************
+
+***********************************************
+Wed Sep 2 21:34 EST 2025
+********IN
+
+opened the log file
+started the Home work 2 assignment.
+problems:
+1.
+created a python file in a new folder for the assignment using spyder and mkdir command.
+
+2.
+started writing python codes for the given problem.
+created an array with 1001 elements and printed the data type ,min,max of the array
+re-scaled the array to 0 to 2Pi.
+made another array y with sin values of the previous array
+
+3.
+wrote commands to plot y vs x and labeled the plot.
+saved the plot in the home work folder
+
+4.
+created a line space array and clipped it using clip command
+plotted the line space array and clipped array in one plot with appropriate titles and legends
+
+5.
+searched different astronomical softwares and wrote about them in the python file between triple single quotes
+
+6.
+problem with stokes
+I have got the laptop from my professor and it is not connecting to the ucf wpa2 wifi. I have been taking it to the IT office and they will hopefully solve this issue soon
+
+since I cannot connect to stokes at the moment, I will right here the codes and commands I would use for the next part of the assignment
+
+I would use  " ssh sana@stokes.astro.ucf.edu " to log in to stokes
+
+to create a homework folder in stokes ' mkdir ~/ast4762/homework/hw2_sana '
+
+to copy my python file in stokes   '  scp hw2_sana.py sana@stokes.astro.ucf.edu:~/ast4762/homework/hw2_sana/  '
+
+to run the file in stokes     '   cd ~/ast4762/homework/hw2_sana  ' ,  ' python hw2_sana.py '
+
+to upload the file to github   '  git add hw2_sana.py /// git commit -m "Completed Homework 2" ///  git push   '
+
+after uploading the file, take the screenshot of the log and save it as gitlog_hw2_sana.png in the hw2_sana folder
+
+copied the screenshot to stokes by 
+scp gitlog_hw2_sana.png sana@stokes.astro.ucf.edu:~/ast4762/homework/hw2_sana/
+
+save and copy this log file in the hw_sana folder as 2-ast4762-sana.log and make a zip folder of the folder by using compress command. upload all the additional files to stokes.
+
+Create a tar.gz archive using
+Command used: tar -czvf hw2_sana.tar.gz hw2_sana/
+
+Download tar.gz to desktop
+scp sana@stokes.astro.ucf.edu:~/ast4762/homework/hw2_sana.tar.gz ~/desktop/
+
+Submit hw2_sana.tar.gz to Webcourses by dragging or selecting the folder.
+
+
+Sep 2 23:16 EST 2025
+********OUT
+***********************************************************
+
+
+***********************************************
+Wed Sep 5 14:30 EST 2025
+********IN
+
+started with practicum 1 in class
+
+created a new folder in the AST4762 foldercalled practicum2_sana
+created a new jupyter notebook file in the new folder
+
+first practice problem is making a 2 dimensional array using and without using the for loop
+
+the code for the problem and plots are saved in the folder.
+
+compress the folder and upload in webcourses
+
+Sep 5 15:52 EST 2025
+********OUT
+***********************************************************
+
+************************************************************
+Sun Sep 7 22:14 EST 2025
+********IN
+
+created a python file in a new folder for the assignment using spyder and mkdir command.
+
+Sun Sep 7 22:30 EST 2025
+********OUT
+
+***********************************************************
+
+************************************************************
+
+Mon Sep 8 10:13 EST 2025
+********IN
+
+started with creating a new python file called support function
+copied appropriate structure from the module template while writing the support function and saved it as hw3_supportfile_sana.py
+
+in the support file should include the following
+1	Module-level docstring which describes the purpose of the file.
+2	Imports – Only necessary libraries.
+3	Function definitions – Each function includes:
+	A descriptive name.
+	A detailed docstring with parameters, return values, and examples.
+	Testing section – Used for validating function behavior.
+	
+These parts ensure clarity and ease of testing.
+
+imported all the required libraries
+started copy pasting the appropriate parts of the first function given in the template
+started a square function by defining it as def square(x):
+
+'''  writing the docstrings for the function in inverted commas  '''
+
+first debug was correcting the >>> and indentations for each line
+
+code runs properly
+added raise : when the user inputs anything other than number or array of numbers then the function raises input error
+
+called the function in main file
+error : recursion error
+the support file included return square(x) line which caused the function to run repeatedly at the end of each iteration
+
+code runs properly in the main file
+
+wrote code for part h and i of question 2
+saved the main file
+
+Question 3:
+
+wrote another function for square plot
+it takes 3 inputs i.e the beginning,end and number of points in between the range. also an optional input to saveplot with desired name
+
+used this function in the main file with exemplary arguments and saved the plot
+
+since I cannot connect to stokes at the moment, I will right here the codes and commands I would use for the next part of the assignment
+
+I would use  " ssh sana@stokes.astro.ucf.edu " to log in to stokes
+
+to create a homework folder in stokes ' mkdir ~/ast4762/homework/hw3_sana '
+
+to copy my python file in stokes   '  scp hw3_sana.py sana@stokes.astro.ucf.edu:~/ast4762/homework/hw3_sana/  '
+
+to run the file in stokes     '   cd ~/ast4762/homework/hw3_sana  ' ,  ' python hw3_sana.py '
+
+to upload the file to github   '  git add hw3_sana.py /// git commit -m "Completed Homework 3" ///  git push   '
+
+after uploading the file, take the screenshot of the log and save it as gitlog_hw3_sana.png in the hw3_sana folder
+create a tar.gz archive using
+Command used: tar -czvf hw3_sana.tar.gz hw3_sana/
+Download tar.gz to desktop
+scp sana@stokes.astro.ucf.edu:~/ast4762/homework/hw3_sana.tar.gz ~/desktop/
+Submit hw3_sana.tar.gz to Webcourses by dragging or selecting the folder.
+
+Mon Sep 8 12:28 EST 2025
+********OUT
+********************************************************
+
+************************************************************
+
+Wed Sep 10 14:30 EST 2025
+********IN
+continued error analysis
+wrote code for calculating surface area of a triangle with given error
+wrote code for calculation series and parallel resistances for given resistances and voltage for both combinations
+
+writing code for analysing a csv fileof data of exoplanets 
+
+Wed Sep 10 16:30 EST 2025
+********OUT
+
+********************************************************
+
+************************************************************
+
+Fri Sep 12 14:30 EST 2025
+********IN
+
+started doing the practicum 2
+
+starting with making a subsample by taking random numbers from a gaussian distribution
+wrote the code to print and store this info in a txt file
+gave commands to copilot to generate the same type of code and compare it with mine.
+
+copilot creates the array first and stores the mean, standard deviation of every sample with every iteration of the loop.
+I hadn't done that initially but to save the results, I also created a zeros array first
+
+I had tried the np.savetxt command first without initializing the array hence it didnt work, but now it works
+ made an extra loop to repeat this calculation for different sample sizes
+ 
+Fri Sep 12 15:30 EST 2025
+********OUT
+
+********************************************************
+
+************************************************************
+
+Sat Sep 13 20:21 EST 2025
+********IN
+
+started doing Home work 4
+Q1.  made a new folder for Homework 4 as hw4_sana using mkdir command on terminal in the AST4762 folder
+	* started with a new python file
+
+Q2.	Wrote a code for generating a gaussian distribution sample with given parameters
+	created a histogram to show the said distribution sample and saved it appropriately
+	made a gaussian line using scipy and saved the overlap plot
+Sat Sep 13 21:10 EST 2025
+********OUT
+********************************************************
+
+************************************************************
+
+Sat Sep 14 12:00 EST 2025
+********IN	
+
+started with Q3 on homework 4
+extra credit question
+* solved the FWHM and sigma relation and saved it as pdf in the folder
+ Logarithmic scale means that instead of plotting the raw values, you plot their logarithms.
+* In a log-log plot, if your data follows a power law like:
+	y=a * x.power(b)	a,b are constants
+then the log-log plot will show a straight line, because:
+log⁡(y)=log⁡(a)+b⋅log⁡(x)
+is a straight line with slope b and intercept log(a)
+log log plot is useful for
+* understanding the relationship of variables over a large range
+* handling big data with large range
+derived the log log relation of a power law and plotted the graph in python file
+
+committed the code to github
+
+
+
+I would use  " ssh sana@stokes.astro.ucf.edu " to log in to stokes
+
+to create a homework folder in stokes ' mkdir ~/ast4762/homework/hw4_sana '
+
+to copy my python file in stokes   '  scp hw4_sana.py sana@stokes.astro.ucf.edu:~/ast4762/homework/hw4_sana/  '
+
+to run the file in stokes     '   cd ~/ast4762/homework/hw4_sana  ' ,  ' python hw4_sana.py '
+
+to upload the file to github   '  git add hw4_sana.py /// git commit -m "Completed Homework 4" ///  git push   '
+
+after uploading the file, take the screenshot of the log and save it as gitlog_hw4_sana.png in the hw4_sana folder
+create a tar.gz archive using
+Command used: tar -czvf hw4_sana.tar.gz hw4_sana/
+Download tar.gz to desktop
+scp sana@stokes.astro.ucf.edu:~/ast4762/homework/hw4_sana.tar.gz ~/desktop/
+Submit hw4_sana.tar.gz to Webcourses by dragging or selecting the folder.
+
+Sat Sep 14 14:00 EST 2025
+********OUT
+
+********************************************************
+
+************************************************************
+
+Sat Sep 20 20:36 EST 2025
+********IN	
+
+Made a new folder in the AST4762 folder using mkdir command with name hw5_sana
+created a new python file with the same name using spyder
+started with the first problem
+
+copied the code i wrote in practicum during class
+
+repeated the masking 2 more times and compared the data set
+
+the 2nd masking gets rid of all the large 4 end points of the data that were skewing the results
+
+Sat Sep 20 22:36 EST 2025
+********OUT
+
+********************************************************
+
+************************************************************
+
+Sat Sep 21 16:36 EST 2025
+********IN
+
+created a function for the masking we did twice for the data
+
+I have kept the original process of cleaning the data and the new compact function in the same .py file
+all the figures are saved in the folder using plt.savefig command
+
+The function works well as expected and produce the same results as we did in class
+
+A really important observation I had is that individual masking twice doesn't always improve the data set as expected. 
+
+If you run my .py file you will observe that masking once and masking twice are 2 different plots that keep updating and we can see that sometimes the masking produces better data with one iteration of sigma clipping and sometimes it only works with 2 iterations.
+
+after all this i pushed the homework folder to github and uploading it to stokes now
+
+I would use  " ssh sana@stokes.astro.ucf.edu " to log in to stokes
+
+to create a homework folder in stokes ' mkdir ~/ast4762/homework/hw5_sana '
+
+to copy my python file in stokes   '  scp hw5_sana.py sana@stokes.astro.ucf.edu:~/ast4762/homework/hw5_sana/  '
+
+to run the file in stokes     '   cd ~/ast4762/homework/hw5_sana  ' ,  ' python hw5_sana.py 
+
+after uploading the file, take the screenshot of the log and save it as gitlog_hw5_sana.png in the hw5_sana folder
+
+create a tar.gz archive using
+Command used: tar -czvf hw5_sana.tar.gz hw5_sana/
+Download tar.gz to desktop
+scp sana@stokes.astro.ucf.edu:~/ast4762/homework/hw5_sana.tar.gz ~/desktop/
+
+Submit hw5_sana.tar.gz to Webcourses by dragging or selecting the folder.
+
+Sat Sep 21 17:50 EST 2025
+********OUT
+
+********************************************************
+
+************************************************************
+
+Sun Sep 28 19:36 EST 2025
+********IN
+
+Started with homework 6
+Q1.  made a new folder for Homework 4 as hw4_sana using mkdir command on terminal in the AST4762 folder
+	* started with a new python file
+
+Q2. Started writing a review paper using an already existing template on Overleaf. read 2 out of the 4 papers.
+
+realized that the review paper writing is a part of final project
+The short review of the papers is saved in the file Review of the papers _ sana.txt in hw6_sana folder
+
+Sun Sep 28 22:47 EST 2025
+******** OUT
+
+
+********************************************************
+
+********************************************************
+
+Monday, 06 oct , 9:32 EST 2025
+********  IN
+
+Started with the Homework again
+
+Q3. Read the data from the transit lightcurve file.
+
+a) made a publication ready plot of the data
+b) Made a box shaped curve to fit the data and noted the depth (height) of the flux
+  The best fit window properties are displayed
+  using the best fit depth we can calculate the uncertainity in the radius by error propagation
+
+all the plots are saved with appropriate python commands
+
+Q4. Now  i pushed the homework folder to github and uploading it to stokes now
+
+I would use  " ssh sana@stokes.astro.ucf.edu " to log in to stokes
+to create a homework folder in stokes ' mkdir ~/ast4762/homework/hw6_sana '
+to copy my python file in stokes   '  scp hw6_sana.py sana@stokes.astro.ucf.edu:~/ast4762/homework/hw6_sana/  '
+
+to run the file in stokes     '   cd ~/ast4762/homework/hw6_sana  ' ,  ' python hw6_sana.py 
+
+after uploading the file, take the screenshot of the log and save it as gitlog_hw6_sana.png in the hw5_sana folder
+create a tar.gz archive using
+Command used: tar -czvf hw6_sana.tar.gz hw6_sana/
+Download tar.gz to desktop
+scp sana@stokes.astro.ucf.edu:~/ast4762/homework/hw6_sana.tar.gz ~/desktop/
+Submit hw6_sana.tar.gz to Webcourses by dragging or selecting the folder.
+
+Mon oct 6 10:40 EST 2025
+******** OUT
+
+********************************************************
+
+********************************************************
+
+Thursday 09 oct , 21:32 EST 2025
+********  IN
+
+I had solved first 4 problems of midterm already. I started the 5th problem
+
+created a histogram and plotted sigma fitting
+
+used AI to better my plot and add commands to make the plot more readable and appealing
+
+I solved next problems without much debugging. I loaded the pickle file data and averaged it with numpy to get the final picture
+
+I started with problem  7 and loaded all the fits images
+visual inspection of the stretched image was difficult due to the faint background stars scattered in the images
+
+Thursday 09 oct , 00:32 EST 2025
+******** OUT
+
+********************************************************
+
+********************************************************
+
+Friday 10 oct , 14:32 EST 2025
+********  IN
+
+started wih the midterm in class
+
+plotted all the 40 images and one combined image of all the ifts file
+
+cleaned the background stars by averaging and got a new image with only 2 stars and a line artifact
+
+figured out how to remove the line artifact
+
+Friday 10 oct , 15:00 EST 2025
+******** OUT
+
+********************************************************
+
+********************************************************
+
+Saturday 10 oct , 14:32 EST 2025
+********  IN
+
+started with problem 7 again
+
+learned centroid fitting to get the centers of stars in the image
+
+learned how to compute PSF of the stars and plotting radial profile of intensity
+
+continued problem 8 9 and 10 
+
+problem 9 seems to have a formula error
+
+got the key tentatively but its not working yet.
+
+Saturday 10 oct , 17:32 EST 2025
+********  OUT
+
+********************************************************
+
+********************************************************
+
+Sunday 11 oct , 21:32 EST 2025
+********  IN
+starting HW7
+
+loaded all the obj files and dark files from the directory to a new 'file name' array
+
+got all the dark files and combined them to get the median dark image using numpy
+
+printed the asked pixel values from median array obj frame and subtracted obj frame
+
+added history to the header of first dark frame that a median image is created and used this header to write into the new dark_13s_med.fits file
+
+subtracted the median image from all the obj files using a loop and appended it in an array obj_subtracted
+
+printed the first obj file pixel [217,184] from before and after the subtraction 
+saved the new subtracted_array into a new fits file hw7_prob2_graph1_sana.fits
+
+I use  " ssh sana@stokes.astro.ucf.edu " to log in to stokes
+to create a homework folder in stokes ' mkdir ~/ast4762/homework/hw7_sana '
+to copy my python file in stokes   '  scp hw7_sana.py sana@stokes.astro.ucf.edu:~/ast4762/homework/hw7_sana/  '
+
+to run the file in stokes     '   cd ~/ast4762/homework/hw7_sana  ' ,  ' python hw7_sana.py 
+
+after uploading the file, take the screenshot of the log and save it as gitlog_hw7_sana.png in the hw5_sana folder
+create a tar.gz archive using
+Command used: tar -czvf hw7_sana.tar.gz hw7_sana/
+Download tar.gz to desktop
+scp sana@stokes.astro.ucf.edu:~/ast4762/homework/hw7_sana.tar.gz ~/desktop/
+Submit hw7_sana.tar.gz to Webcourses by dragging or selecting the folder.
+
+Sunday 11 oct , 00:32 EST 2025
+********  OUT
+
+********************************************************
+
+********************************************************
+
+Friday 17 oct , 14:50 EST 2025
+********  IN
+
+1. Created a new hw8_sana folder using the terminal and copied the data from folder hw7 to the new folder
+hw7 solution was correct hence i didnt fix any errors. continued building on to the code.
+
+2. created a function normmedcomb which median combines the data cube for a perticular given region
+
+3. Copied hw7_sana.py in the practicum notebook to get the dark subtracted objectfile
+
+4. got the mdeian combined array from the dark subtracted objectfile using the function created earlier
+
+5. Saved the new array as a fits file named sky_13s_mednorm.fits
+
+Sunday 17 oct , 15:32 EST 2025
+********  OUT
+
+********************************************************
+
+********************************************************
+
+Tuesday 21 oct , 21:02 EST 2025
+********  IN
+
+- continued hw8
+
+create a new function to compute sky subtraction from object
+
+continue from hw7 object frames
+
+load the sky frame as the 2d array created in practicum
+
+compute the denormalization and subtraction of sky frame from obj frame in a loop
+
+save the last frame and print the requested pixel values
+
+upload to github
+

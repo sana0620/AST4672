@@ -1,0 +1,29 @@
+Rubric for Homework 7 Problem 2:
+
+1. Median Combination Function (10 points)
+   - Uses numpy median or other function correctly
+   - No loops used
+
+2. Pixel Value Extraction (5 points)
+   - Correct pixel index used
+   - Value printed clearly
+
+3. FITS Header Modification (10 points)
+   - HISTORY added correctly
+
+4. Writing FITS File (10 points)
+   - Correct filename used to create fits file
+   - Updated header used
+
+5. Background Subtraction (15 points)
+   - Subtraction done correctly
+   - Pixel values printed before and after subtraction
+
+6. Writing Subtracted Frame (10 points)
+   - Correct filename used to create fits file
+   - Frame saved properly in the folder
+
+7. Code Quality (10 points)
+   - Code runs without errors
+   - Demonstrate good coding practice
+
