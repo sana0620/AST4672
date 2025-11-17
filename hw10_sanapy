@@ -1,0 +1,200 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Nov 16 20:25:20 2025
+
+@author: sana
+"""
+
+import numpy as np
+import disk as d
+import os
+from astropy.io import fits
+
+# apphot from practicum 7 that I wrote
+
+def apphot(image, mask, apr_radius, rin, rout, centre):
+    """
+    Performs Aperture photometry calculations on a given image
+
+    Parametrs:
+    ----------
+    - image( 2d numpy array ): input image containing the object
+    - mask( 2d numpy array of bools) : mask over the image that shows good and bad pixels
+    - apr_radius (float): Aperture radius for photometry
+    - rin (float): inner radius of the sky annulus
+    - rout (float): outer radius of the sky annulus
+    - centre (tuple): (y,x )coordinates of centre of the object in the image
+
+    Returns:
+    ---------
+    -tuple: (stellar flux, average sky, bad_pixel_count)    
+        - stellar_flux (float): Total flux in the aperture after sky subtraction.
+        - average_sky (float): Mean sky background value per pixel.
+        - bad_pixel_count (int): Number of bad pixels within the aperture.
+    """
+    #a)
+    
+    nx = int( 2 * rout + 1 )
+    ny = nx 
+    y1 = int( np.max( [0, np.floor(centre[0]- ny/2) ] ) )
+    x1 = int( np.max( [0,np.floor(centre[1]- nx/2) ] ) )
+    y2 = int( np.min( [image.shape[0], np.ceil( centre[0]+ ny/2) ]) )
+    x2 = int( np.min( [image.shape[1], np.ceil( centre[1]+ nx/2) ]) )
+    
+    sub_image = image[ y1: y2, x1:x2 ].copy()
+    sub_mask = mask[ y1: y2, x1:x2 ].copy()
+    
+    # center in CUTOUT coordinates
+    cut_centre = (centre[0] - y1, centre[1] - x1)
+    
+    #b)
+    skymask = d.disk(rout, cut_centre, sub_image.shape) \
+                ^ d.disk(rin,  cut_centre, sub_image.shape)
+    valid_sky = skymask & sub_mask  #excluding bad pixels  
+    
+    #c)
+    average_sky  = np.median( sub_image[valid_sky] )
+
+    #d)
+    sky_subtracted_subim = sub_image - average_sky
+
+    #e)    
+    aper = d.disk(apr_radius, cut_centre, sub_image.shape)
+    valid_aper = aper & sub_mask   #excluding bad pixels
+    
+    #f)
+    flux_aper = np.sum(sky_subtracted_subim[valid_aper]) # total intensity in aperture
+
+    bad_pixel = np.sum( valid_aper & ~sub_mask  ) # in aperture
+    
+    return flux_aper, average_sky, bad_pixel
+
+
+def dophot(phot_table, frames, mask, apr_radius, rin, rout):
+    """
+    Runs aperture photometry for each star and frame.
+
+    phot_table : [nstar, nframe, npar]
+        Columns: [yguess, xguess, width, cy, cx, star_flux, sky_level]
+    frames : [nframe, ny, nx]
+        Image data from dark+sky-corrected frames
+    mask : [ny, nx]
+        Good/bad pixel mask (True = good)
+    apr_radius, rin, rout : floats
+        Aperture and sky annulus radii.
+
+    Returns
+    -------
+    phot_table with columns 5 and 6 filled.
+    """
+
+    nstar, nframe, npar = phot_table.shape
+
+    for s in range(nstar):
+        for f in range(nframe):
+            cy = phot_table[s, f, 3]  # fitted y from HW9
+            cx = phot_table[s, f, 4]  # fitted x
+
+            if np.isnan(cy) or np.isnan(cx):
+                continue
+
+            centre = (cy, cx)
+            image  = frames[f]
+
+            flux, sky, nbad = apphot(image, mask, apr_radius, rin, rout, centre)
+
+            phot_table[s, f, 5] = flux
+            phot_table[s, f, 6] = sky
+
+    return phot_table
+
+# Photometry table from the HW9 solution
+
+iyg, ixg, iwidth, icy, icx, istar, isky = np.arange(7)
+photometry = np.full((3, 3, 7), np.nan, dtype=float)
+
+photometry[0, 0, [iyg, ixg, iwidth, icy,    icx   ]] = [698, 512, 0.980, 698.62, 512.39]
+photometry[0, 1, [iyg, ixg, iwidth, icy,    icx   ]] = [464, 517, 0.975, 464.37, 517.42]
+photometry[0, 2, [iyg, ixg, iwidth, icy,    icx   ]] = [228, 522, 1.114, 228.43, 521.93]
+
+photometry[1, 0, [iyg, ixg, iwidth, icy,    icx   ]] = [668, 520, 1.016, 667.88, 520.23]
+photometry[1, 1, [iyg, ixg, iwidth, icy,    icx   ]] = [434, 525, 0.962, 433.58, 525.30]
+photometry[1, 2, [iyg, ixg, iwidth, icy,    icx   ]] = [198, 530, 1.146, 197.64, 529.79]
+
+photometry[2, 0, [iyg, ixg, iwidth, icy,    icx   ]] = [568, 283, 1.046, 568.26, 283.30]
+photometry[2, 1, [iyg, ixg, iwidth, icy,    icx   ]] = [334, 288, 0.960, 333.96, 288.36]
+photometry[2, 2, [iyg, ixg, iwidth, icy,    icx   ]] = [ 98, 293, 1.082,  98.07, 292.90]
+
+# sky+dark corrected array from hw7_data export
+
+folder_path = "hw7_data_export"
+fits_files = [f for f in os.listdir(folder_path) if f.endswith(".fits")]
+dark_files = sorted([f for f in fits_files if f.startswith("dark_13s_")])
+object_files = sorted([f for f in fits_files if f.startswith("stars_13s_")])
+dark_stack = []
+for file in dark_files:
+    with fits.open(os.path.join(folder_path, file)) as hdul:
+        dark_stack.append(hdul[0].data)
+dark_stack = np.array(dark_stack)
+median_dark = np.median(dark_stack, axis=0)
+with fits.open(os.path.join(folder_path, dark_files[0])) as hdul:
+    header = hdul[0].header
+header.add_history("A Median combination dark frame is created.")
+# Subtract the median dark from each object frame
+object_dark_subtracted = []
+for file in object_files:
+    with fits.open(os.path.join(folder_path, file)) as hdul:
+        obj_data = hdul[0].data
+        subtracted = obj_data - median_dark
+        object_dark_subtracted.append(subtracted)
+obj_frames,ny,nx = np.shape(object_dark_subtracted)
+def skycormednorm(object_frame, norm_sky_frame, norm_region=None):
+    obj = np.copy(object_frame)
+    sky = np.copy(norm_sky_frame)
+    ny, nx = obj.shape
+    if norm_region is None:
+        norm_region = ((0, 0), (ny, nx))
+    (y1, x1), (y2, x2) = norm_region
+    norm_factor = np.median(obj[y1:y2, x1:x2])
+    denorm_sky = sky * norm_factor
+    sky_sub_obj = obj - denorm_sky
+    return sky_sub_obj, norm_factor
+
+with fits.open("sky_13s_mednorm.fits") as hdul:
+        sky_frame = hdul[0].data
+norm_factors_list = []
+sky_sub_frames = []
+norm_region = ((225, 225), (-225, -225))
+for i in range(obj_frames):
+    sky_sub_obj,norm_factor = skycormednorm(object_dark_subtracted[i],sky_frame,norm_region)
+    norm_factors_list.append(norm_factor)
+    sky_sub_frames.append(sky_sub_obj)
+norm_factors = np.array(norm_factors_list)
+
+# the newwest array is dark subtracted and sky corrected
+# named sky_sub_frames
+
+mean_width  = 1.3593   # from hw9
+r_ap = 1.5 * mean_width 
+r_in  = 3.0 * mean_width   
+r_out = 5.0 * mean_width   
+subsize = 8 * mean_width
+
+frames = sky_sub_frames 
+mask   = np.ones_like(frames[0], dtype=bool)
+
+photometry = dophot(photometry, frames, mask, r_ap, r_in, r_out)
+
+print("\nStar fluxes (column 5):")
+print(photometry[:, :, 5])
+
+print("\nSky levels (column 6):")
+print(photometry[:, :, 6])
+
+print('\n# star frame yg   xg   width  cy      cx      aper      sky')
+for   star  in np.arange(3):
+    for frame in np.arange(3):
+        print('# %.0f    %.0f   %5.0f  %3.0f  %.3f  %6.2f  %6.2f  %8.2f  %6.2f' % ((star, frame) + 
+                                                                tuple(photometry[star, frame,:])))
+
